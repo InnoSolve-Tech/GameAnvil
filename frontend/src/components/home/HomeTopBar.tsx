@@ -20,7 +20,7 @@ export const HomeTopBar: FC = () => {
         <div className="item">Marketplace</div>
         <div className="item">Rankings</div>
         <div className="item">Connect a Wallet</div>
-        <div className="item signup">Sign Up</div>
+        <div className="item1">Sign Up</div>
       </div>
     </div>
   )
