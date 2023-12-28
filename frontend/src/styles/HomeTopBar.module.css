@@ -1,0 +1,44 @@
+/* HomeTopBar.module.css */
+
+.homeTopBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+.leftItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightItems {
+  display: flex;
+  gap: 12px;
+}
+
+.item {
+  width: 112px;
+  height: 46px;
+  padding: 0px 20px;
+  border-radius: 20px;
+  gap: 12px;
+}
+
+.item1 {
+  width: 112px;
+  height: 46px;
+  padding: 0px 20px;
+  border-radius: 20px;
+  gap: 12px;
+  background-color: #a259ff;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-left: 8px;
+}
