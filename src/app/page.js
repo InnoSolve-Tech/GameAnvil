@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import styles from './app.module.css';
 import { DocsCard, HelloComponentsCard, HelloNearCard } from '@/components/cards';
+import ResponsiveAppBar from '@/components/homeNavbar';
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <ResponsiveAppBar />
       <div className={styles.description}> </div>
 
       <div className={styles.center}>
