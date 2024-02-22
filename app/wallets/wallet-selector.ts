@@ -1,14 +1,45 @@
-import { create as createStore } from 'zustand';
+import { create as createStore, StateCreator } from 'zustand';
 import { distinctUntilChanged, map } from 'rxjs';
 import { providers } from 'near-api-js';
-import { setupWalletSelector } from '@near-wallet-selector/core';
+import { NetworkId, setupWalletSelector } from '@near-wallet-selector/core';
 import { setupModal } from '@near-wallet-selector/modal-ui';
 import { setupMyNearWallet } from '@near-wallet-selector/my-near-wallet';
 import { setupHereWallet } from '@near-wallet-selector/here-wallet';
 
 import { useEffect, useState } from 'react';
 
-export const useWallet = createStore(set => ({
+interface WalletState {
+  signedAccountId: string;
+  logOut?: () => void;
+  logIn?: () => void;
+  selector?: any; // Update the type as per the actual type
+  viewMethod?: (contractId: string, method: string, args?: any) => Promise<any>;
+  callMethod?: (
+    contractId: string,
+    method: string,
+    args?: any,
+    gas?: string,
+    deposit?: number
+  ) => Promise<any>;
+  setLogActions: ({ logOut, logIn }: { logOut: () => void; logIn: () => void }) => void;
+  setAuth: ({ signedAccountId }: { signedAccountId: string }) => void;
+  setMethods: ({
+    viewMethod,
+    callMethod,
+  }: {
+    viewMethod: (contractId: string, method: string, args?: any) => Promise<any>;
+    callMethod: (
+      contractId: string,
+      method: string,
+      args?: any,
+      gas?: string,
+      deposit?: number
+    ) => Promise<any>;
+  }) => void;
+  setStoreSelector: ({ selector }: { selector: any }) => void; // Update the type as per the actual type
+}
+
+export const useWallet = createStore<WalletState>((set) => ({
   signedAccountId: '',
   logOut: undefined,
   logIn: undefined,
@@ -21,17 +52,17 @@ export const useWallet = createStore(set => ({
   setStoreSelector: ({ selector }) => set({ selector }),
 }));
 
-export function useInitWallet({ createAccessKeyFor, networkId }) {
-  const setAuth = useWallet(store => store.setAuth);
-  const setLogActions = useWallet(store => store.setLogActions);
-  const setMethods = useWallet(store => store.setMethods);
-  const setStoreSelector = useWallet(store => store.setStoreSelector);
-  const [selector, setSelector] = useState(undefined);
+export function useInitWallet({ createAccessKeyFor, networkId }: { createAccessKeyFor: string; networkId: NetworkId }) {
+  const setAuth = useWallet.getState().setAuth;
+  const setLogActions = useWallet.getState().setLogActions;
+  const setMethods = useWallet.getState().setMethods;
+  const setStoreSelector = useWallet.getState().setStoreSelector;
+  const [selector, setSelector] = useState<any>(undefined); // Update the type as per the actual type
 
   useEffect(() => {
     const selector = setupWalletSelector({
       network: networkId,
-      modules: [setupMyNearWallet(), setupHereWallet()]
+      modules: [setupMyNearWallet(), setupHereWallet()],
     });
 
     setSelector(selector);
@@ -41,18 +72,20 @@ export function useInitWallet({ createAccessKeyFor, networkId }) {
   useEffect(() => {
     if (!selector) return;
 
-    selector.then(walletSelector => {
+    selector.then((walletSelector: any) => {
       const accounts = walletSelector.store.getState().accounts;
-      const signedAccountId = accounts.find((account) => account.active)?.accountId || '';
+      const signedAccountId =
+        accounts.find((account: any) => account.active)?.accountId || '';
       setAuth({ signedAccountId });
 
       walletSelector.store.observable
         .pipe(
-          map((state) => state.accounts),
+          map((state: any) => state.accounts),
           distinctUntilChanged()
         )
-        .subscribe((accounts) => {
-          const signedAccountId = accounts.find((account) => account.active)?.accountId || '';
+        .subscribe((accounts: any) => {
+          const signedAccountId =
+            accounts.find((account: any) => account.active)?.accountId || '';
           setAuth({ signedAccountId });
         });
     });
@@ -61,7 +94,6 @@ export function useInitWallet({ createAccessKeyFor, networkId }) {
   useEffect(() => {
     if (!selector) return;
 
-    // defined logOut and logIn actions
     const logOut = async () => {
       const wallet = await (await selector).wallet();
       await wallet.signOut();
@@ -79,7 +111,7 @@ export function useInitWallet({ createAccessKeyFor, networkId }) {
   useEffect(() => {
     if (!selector) return;
 
-    const viewMethod = async (contractId, method, args = {}) => {
+    const viewMethod = async (contractId: string, method: string, args: any = {}) => {
       const { network } = (await selector).options;
       const provider = new providers.JsonRpcProvider({ url: network.nodeUrl });
 
@@ -90,10 +122,16 @@ export function useInitWallet({ createAccessKeyFor, networkId }) {
         args_base64: Buffer.from(JSON.stringify(args)).toString('base64'),
         finality: 'optimistic',
       });
-      return JSON.parse(Buffer.from(res.result).toString());
+      return (res).toString();
     };
 
-    const callMethod = async (contractId, method, args = {}, gas = '30000000000000', deposit = 0) => {
+    const callMethod = async (
+      contractId: string,
+      method: string,
+      args: any = {},
+      gas: string = '30000000000000',
+      deposit: number = 0
+    ) => {
       const wallet = await (await selector).wallet();
 
       const outcome = await wallet.signAndSendTransaction({
@@ -115,6 +153,5 @@ export function useInitWallet({ createAccessKeyFor, networkId }) {
     };
 
     setMethods({ viewMethod, callMethod });
-
   }, [selector, setMethods]);
 }

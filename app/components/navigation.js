@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import NearLogo from 'public/near-logo.svg';
-import { useWallet } from '@/wallets/wallet-selector';
+import { useWallet } from '@/app/wallets/wallet-selector';
 
 export const Navigation = () => {
 

@@ -12,6 +12,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.10",
     "@near-wallet-selector/core": "^8.5.1",
     "@near-wallet-selector/here-wallet": "^8.5.1",
     "@near-wallet-selector/modal-ui": "^8.5.1",
@@ -37,7 +41,9 @@
     "zustand": "^4.4.4"
   },
   "devDependencies": {
+    "@types/node": "20.11.19",
     "eslint": "^8.53",
-    "eslint-config-next": "14.0.1"
+    "eslint-config-next": "14.0.1",
+    "typescript": "5.3.3"
   }
 }
