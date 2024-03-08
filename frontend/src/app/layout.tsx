@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en',
     url: env.url,
-    siteName: 'ink!athon Boilerplate',
+    siteName: 'GameAnvil',
     images: [
       {
         url: '/images/inkathon-og-banner.jpg',
