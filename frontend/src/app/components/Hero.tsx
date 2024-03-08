@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 import RocketIcon from '@mui/icons-material/Rocket'
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
 
@@ -18,7 +20,8 @@ function Hero() {
               lineHeight: 1.5,
             }}
           >
-            Welcome to the Ultimate Hub for Gaming Assets and Token Management!
+            Welcome to the Ultimate Hub for Gaming Assets
+            <br /> & Token Management!
           </Typography>
           <Typography
             sx={{
@@ -43,7 +46,9 @@ function Hero() {
             </Button>
           </Box>
         </Grid>
-        <Grid item md={6} xs={12}></Grid>
+        <Grid item md={6} xs={12}>
+          <Image src="/images/hero.png" height={800} width={800} alt="Hero section image" />
+        </Grid>
       </Grid>
     </Container>
   )
