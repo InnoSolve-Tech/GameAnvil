@@ -16,6 +16,10 @@
     "lint:format": "prettier . --write"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.10",
     "@727-ventures/typechain-types": "^1.1.2",
     "@azns/resolver-core": "^1.6.0",
     "@azns/resolver-react": "^1.6.0",
