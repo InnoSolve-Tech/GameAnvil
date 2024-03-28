@@ -9,10 +9,12 @@ export default function ProfilesCard({
   name,
   value,
   image,
+  followers,
 }: {
   name: string
   value: number
   image: string
+  followers: number
 }) {
   function addCommas(number: number): string {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -25,7 +27,7 @@ export default function ProfilesCard({
         borderRadius: '10px',
         padding: '10px',
         backgroundColor: '#353935',
-        height: '200px',
+        height: '220px',
       }}
     >
       <CardActionArea>
@@ -53,6 +55,14 @@ export default function ProfilesCard({
             color="grey"
           >
             Holdings: <span style={{ color: '#FAF9F6' }}>${addCommas(value)}</span>
+          </Typography>
+          <Typography
+            variant="body2"
+            textAlign={'center'}
+            sx={{ fontSize: { md: '14px', xs: '12px' } }}
+            color="grey"
+          >
+            Followers: <span style={{ color: '#FAF9F6' }}>{addCommas(followers)}</span>
           </Typography>
         </CardContent>
       </CardActionArea>

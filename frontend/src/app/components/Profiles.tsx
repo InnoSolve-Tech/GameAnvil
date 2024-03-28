@@ -47,13 +47,18 @@ function Profiles() {
         </Grid>
       </Grid>
 
-      <Grid container spacing={5} sx={{ mt: '20px', marginLeft: 'auto', marginRight: 'auto' }}>
+      <div className="mt-4 grid grid-cols-1 place-items-center gap-6 md:grid-cols-4">
         {profileData.map((profile) => (
-          <Grid key={profile.image} item xs={12} md={3}>
-            <ProfilesCard image={profile.image} name={profile.name} value={profile.value} />
+          <Grid key={profile.image} item>
+            <ProfilesCard
+              image={profile.image}
+              name={profile.name}
+              value={profile.value}
+              followers={profile.followers}
+            />
           </Grid>
         ))}
-      </Grid>
+      </div>
     </Container>
   )
 }

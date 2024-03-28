@@ -46,8 +46,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" className={cn(GeistSans.variable, GeistMono.variable)}>
-      <body style={{ backgroundColor: '#28282B' }}>
+    <html lang="en" className={cn('dark', GeistSans.variable, GeistMono.variable)}>
+      <body>
         <ClientProviders>
           <TooltipProvider>
             <NavigationBar />
