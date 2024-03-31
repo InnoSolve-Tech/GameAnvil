@@ -10,6 +10,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { env } from '@/config/environment'
 import { cn } from '@/utils/cn'
 
+import Footer from './components/Footer'
 import NavigationBar from './components/NavigationBar'
 import './globals.css'
 import ClientProviders from './providers'
@@ -46,12 +47,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" className={cn('dark', GeistSans.variable, GeistMono.variable)}>
-      <body>
+    <html lang="en" className={cn(GeistSans.variable, GeistMono.variable)}>
+      <body
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          backgroundColor: '#28282B',
+        }}
+      >
         <ClientProviders>
           <TooltipProvider>
-            <NavigationBar />
-            {children}
+            <div style={{ flex: '1' }}>
+              <NavigationBar />
+              {children}
+            </div>
+            <Footer />
           </TooltipProvider>
           <ToastConfig />
         </ClientProviders>

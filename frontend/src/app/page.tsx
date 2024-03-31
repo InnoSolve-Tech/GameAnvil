@@ -6,10 +6,11 @@ import { Container } from '@mui/material'
 import { useInkathon } from '@scio-labs/use-inkathon'
 import { toast } from 'react-hot-toast'
 
-import Categories from './components/Categories'
-import Hero from './components/Hero'
-import HowItWorks from './components/HowItWorks'
-import Profiles from './components/Profiles'
+import Categories from './components/HomePage/Categories'
+import ContactUsCard from './components/HomePage/ContactUsCard'
+import Hero from './components/HomePage/Hero'
+import HowItWorks from './components/HomePage/HowItWorks'
+import Profiles from './components/HomePage/Profiles'
 
 export default function HomePage() {
   // Display `useInkathon` error messages (optional)
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Profiles />
       <Categories />
       <HowItWorks />
+      <ContactUsCard />
     </Container>
   )
 }

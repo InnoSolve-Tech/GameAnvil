@@ -26,7 +26,7 @@ export default function ProfilesCard({
         width: 250,
         borderRadius: '10px',
         padding: '10px',
-        backgroundColor: '#353935',
+        backgroundColor: '#1B1212',
         height: '220px',
       }}
     >
