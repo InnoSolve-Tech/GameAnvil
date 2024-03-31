@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 
 import { Card } from '@mui/material'
@@ -20,11 +22,11 @@ function ContactUsCard() {
               <h1 className="mb-4 text-4xl font-semibold" style={{ color: '#DBDBDB' }}>
                 Contact Us
               </h1>
-              <p className="mb-8 text-lg" style={{ color: '#DBDBDB' }}>
+              <p className="text-md p-4" style={{ color: '#DBDBDB' }}>
                 Got a question? We&apos;d love to hear from you. <br />
                 Send us a message and we&apos;ll respond as soon as possible.
               </p>
-              <div className="inline-block">
+              <div className="inline-block p-4">
                 <input
                   type="text"
                   placeholder="Your Email Address"

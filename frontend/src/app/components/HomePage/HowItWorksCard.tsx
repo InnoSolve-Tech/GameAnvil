@@ -1,3 +1,5 @@
+'use client'
+
 import { Avatar, Card, CardContent } from '@mui/material'
 
 function HowItWorksCard({ info, image }: { info: string; image: string }) {
