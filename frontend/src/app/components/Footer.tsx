@@ -78,26 +78,26 @@ function Footer() {
           </div>
 
           <div className="text-left lg:mx-auto">
-            <h4 className="mb-7 text-lg font-medium text-gray-400">Blogs</h4>
+            <h4 className="mb-7 text-lg font-medium text-gray-400">Useful Links</h4>
             <ul className="text-sm  transition-all duration-500">
               <li className="mb-6">
                 <a href="javascript:;" className="text-gray-200 hover:text-gray-400">
-                  News
+                  Marketplace
                 </a>
               </li>
               <li className="mb-6">
                 <a href="javascript:;" className=" text-gray-200 hover:text-gray-400">
-                  Tips & Tricks
+                  Ranking
                 </a>
               </li>
               <li className="mb-6">
                 <a href="javascript:;" className=" text-gray-200 hover:text-gray-400">
-                  New Updates
+                  Connect a Wallet
                 </a>
               </li>
               <li>
                 <a href="javascript:;" className=" text-gray-200 hover:text-gray-400">
-                  Events
+                  Sign up
                 </a>
               </li>
             </ul>
