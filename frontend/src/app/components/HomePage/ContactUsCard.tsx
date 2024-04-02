@@ -6,7 +6,7 @@ import { Card } from '@mui/material'
 
 function ContactUsCard() {
   return (
-    <div className=" mb-10 mt-10 grid grid-cols-1 place-items-center">
+    <div className=" mb-10 mt-2 grid grid-cols-1 place-items-center">
       <Card
         sx={{
           width: '80vw',

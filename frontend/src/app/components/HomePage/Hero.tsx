@@ -7,7 +7,7 @@ import { Box, Button, Container, Grid, Typography } from '@mui/material'
 
 function Hero() {
   return (
-    <Container sx={{ minHeight: '100vh', mt: { md: '50px', xs: '20px' } }}>
+    <Container sx={{ minHeight: '100vh', mt: '20px' }}>
       <Grid container>
         <Grid item md={6} xs={12}>
           <Typography

@@ -7,7 +7,7 @@ import CategoryCard from './CategoryCard'
 
 function Categories() {
   return (
-    <Container sx={{ minHeight: '100vh', mt: { md: '50px', xs: '20px' } }}>
+    <Container sx={{ minHeight: '100vh', mt: '20px' }}>
       <Grid container>
         <Grid item xs={12}>
           <Typography
