@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import * as React from 'react'
 
 import MenuIcon from '@mui/icons-material/Menu'
@@ -39,23 +40,13 @@ function NavigationBar() {
     <AppBar position="static" color="transparent" sx={{ zIndex: 0, boxShadow: 0 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            GameAnvil
-          </Typography>
+          <Image
+            className="hidden md:block"
+            src="/images/logo.svg"
+            alt="logo"
+            width={300}
+            height={300}
+          />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -96,25 +87,15 @@ function NavigationBar() {
               </MenuItem>
             </Menu>
           </Box>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          >
-            GameAnvil
-          </Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'row', flexGrow: 1.5 }}>
+            <Image
+              className="xs:block place-items-center md:hidden"
+              src="/images/logo.svg"
+              alt="logo"
+              width={250}
+              height={250}
+            />
+          </Box>
           <Box
             sx={{
               flexGrow: 1,
