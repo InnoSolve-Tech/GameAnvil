@@ -11,6 +11,7 @@ import ContactUsCard from './components/HomePage/ContactUsCard'
 import Hero from './components/HomePage/Hero'
 import HowItWorks from './components/HomePage/HowItWorks'
 import Profiles from './components/HomePage/Profiles'
+import TrendingItems from './components/HomePage/Trending'
 
 export default function HomePage() {
   // Display `useInkathon` error messages (optional)
@@ -23,6 +24,7 @@ export default function HomePage() {
   return (
     <Container sx={{ minHeight: '100vh' }}>
       <Hero />
+      <TrendingItems />
       <Profiles />
       <Categories />
       <HowItWorks />
