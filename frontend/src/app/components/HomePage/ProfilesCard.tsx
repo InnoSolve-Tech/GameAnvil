@@ -1,5 +1,3 @@
-'use client'
-
 import { Avatar, Box, CardActionArea } from '@mui/material'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -30,7 +28,7 @@ export default function ProfilesCard({
         height: '220px',
       }}
     >
-      <CardActionArea>
+      <CardActionArea> 
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Avatar sx={{ width: '100px', height: '100%' }} src={image} />
         </Box>
