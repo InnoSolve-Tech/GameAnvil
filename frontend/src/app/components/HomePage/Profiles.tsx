@@ -2,11 +2,18 @@
 
 import Rocket from '@mui/icons-material/Rocket'
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
-
+import { useRouter } from 'next/router';
 import { profileData } from '../../DummyData/profileData'
 import ProfilesCard from './ProfilesCard'
 
 function Profiles() {
+  const router = useRouter();
+  
+  const handleCardClick = (profileName: string) => {
+    router.push('/UserAccount/Artist'); 
+  };
+
+
   return (
     <Container>
       <Grid container>
