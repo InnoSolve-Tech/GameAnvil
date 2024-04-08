@@ -8,11 +8,13 @@ export default function ProfilesCard({
   value,
   image,
   followers,
+  onClick,
 }: {
   name: string
   value: number
   image: string
   followers: number
+  onClick: (name: string) => void
 }) {
   function addCommas(number: number): string {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -20,6 +22,7 @@ export default function ProfilesCard({
 
   return (
     <Card
+      onClick={() => onClick(name)}
       sx={{
         width: 250,
         borderRadius: '10px',
@@ -28,7 +31,7 @@ export default function ProfilesCard({
         height: '220px',
       }}
     >
-      <CardActionArea> 
+      <CardActionArea>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Avatar sx={{ width: '100px', height: '100%' }} src={image} />
         </Box>
