@@ -1,4 +1,5 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material'
+
 // this is just sample code for the artist page
 export default function Artist() {
   return (
@@ -12,5 +13,5 @@ export default function Artist() {
         </Typography>
       </Box>
     </Container>
-  );
+  )
 }
