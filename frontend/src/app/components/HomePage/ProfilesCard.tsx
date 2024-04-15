@@ -2,27 +2,26 @@ import { Avatar, Box, CardActionArea } from '@mui/material'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
+import Link from 'next/link'
 
 export default function ProfilesCard({
   name,
   value,
   image,
   followers,
-  onClick,
 }: {
   name: string
   value: number
   image: string
   followers: number
-  onClick: (name: string) => void
 }) {
   function addCommas(number: number): string {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   }
 
   return (
+    <Link href={`/UserAccounts/Artist/`}>
     <Card
-      onClick={() => onClick(name)}
       sx={{
         width: 250,
         borderRadius: '10px',
@@ -68,5 +67,6 @@ export default function ProfilesCard({
         </CardContent>
       </CardActionArea>
     </Card>
+    </Link>
   )
 }

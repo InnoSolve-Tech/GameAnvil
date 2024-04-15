@@ -1,6 +1,7 @@
 import { Box, Container, Typography } from '@mui/material'
 
 // this is just sample code for the artist page
+
 export default function Artist() {
   return (
     <Container>
