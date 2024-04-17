@@ -1,25 +1,46 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { Checkroom, ColorLens, MusicNote, Paid, Person2, Settings } from '@mui/icons-material'
-import { Container, Grid, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, Typography } from '@mui/material'
 
 import CategoryCard from './CategoryCard'
 
 function Categories() {
+  const router = useRouter()
+
   return (
     <Container sx={{ minHeight: '100vh', mt: '20px' }}>
       <Grid container>
-        <Grid item xs={12}>
+        <Grid item xs={10}>
           <Typography
             color="white"
             sx={{
               fontSize: { md: '35px', xs: '30px' },
-              textAlign: { md: 'left', xs: 'center' },
               fontWeight: 750,
             }}
           >
             Browse Categories
           </Typography>
+        </Grid>
+        <Grid item xs={2}>
+          <Box sx={{ display: 'flex', justifyContent: 'right' }}>
+            <Button
+              onClick={() => router.push('/categories')}
+              variant="outlined"
+              sx={{
+                borderColor: 'orange',
+                mt: '20px',
+                color: 'orange',
+                '&:hover': {
+                  borderColor: 'darkorange',
+                },
+              }}
+            >
+              See More
+            </Button>
+          </Box>
         </Grid>
       </Grid>
       <div className="mt-4 grid grid-cols-1 place-items-center gap-6 md:grid-cols-4">

@@ -1,10 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
-
 import { Container } from '@mui/material'
-import { useInkathon } from '@scio-labs/use-inkathon'
-import { toast } from 'react-hot-toast'
 
 import Categories from './components/HomePage/Categories'
 import ContactUsCard from './components/HomePage/ContactUsCard'
@@ -14,11 +10,11 @@ import Profiles from './components/HomePage/Profiles'
 
 export default function HomePage() {
   // Display `useInkathon` error messages (optional)
-  const { error } = useInkathon()
-  useEffect(() => {
-    if (!error) return
-    toast.error(error.message)
-  }, [error])
+  // const { error } = useInkathon()
+  // useEffect(() => {
+  //   if (!error) return
+  //   toast.error(error.message)
+  // }, [error])
 
   return (
     <Container sx={{ minHeight: '100vh' }}>
