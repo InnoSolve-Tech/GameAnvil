@@ -1,0 +1,20 @@
+name: Push to Azure Repo
+
+on:
+  push:
+    branches:
+      - main # Adjust this to match your GitHub repo's main branch
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Push to Azure Repo
+        run: |
+          git remote add azure ${{ secrets.AZURE_REPO_URL }}
+          git push azure main:main  # Adjust branch names as necessary
+        env:
+          AZURE_REPO_URL: https://<username>:${{ secrets.AZURE_REPOS_PAT }}@dev.azure.com/ReGen-Corp/GameAnvil/_git/GameAnvil
