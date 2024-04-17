@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from '@mui/material'
 
 // this is just sample code for the artist page
-export default function Artist() {
+export default function ArtistPage() {
   return (
     <Container>
       <Box sx={{ marginTop: 4 }}>

@@ -12,7 +12,7 @@ function Profiles() {
   const router = useRouter()
 
   const handleCardClick = (profileName: string) => {
-    router.push('/UserAccount/Artist')
+    router.push('/useraccounts')
   }
 
   return (
