@@ -18,7 +18,7 @@ export default function CategoryCard({
   categoryImage: string
 }) {
   return (
-    <Card sx={{ width: 250, height: 250, borderRadius: '10px', backgroundColor: '#353935' }}>
+    <Card sx={{ width: 220, height: 250, borderRadius: '10px', backgroundColor: '#353935' }}>
       <CardActionArea>
         <CardMedia
           component="img"

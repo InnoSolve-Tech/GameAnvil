@@ -55,7 +55,7 @@ function Profiles() {
         </Grid>
       </Grid>
 
-      <div className="mt-4 grid grid-cols-1 place-items-center gap-6 md:grid-cols-4">
+      <div className="mt-4 grid grid-cols-1 place-items-center gap-6 md:grid-cols-3 lg:grid-cols-4">
         {profileData.map((profile) => (
           <Grid key={profile.image} item>
             <ProfilesCard
