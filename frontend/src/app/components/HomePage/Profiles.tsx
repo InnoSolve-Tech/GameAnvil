@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import Rocket from '@mui/icons-material/Rocket'
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
 
-import { profileData } from '../../DummyData/profileData'
+import { profileData } from '../../DummyData/profileDatacontent'
 import ProfilesCard from './ProfilesCard'
 
 function Profiles() {
